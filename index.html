@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>La mobilité sur le territoire - Codecom des Portes de Meuse</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+      <h1 class="text-center my-4">La mobilité sur le territoire</h1>
+      <div class="alert alert-primary" role="alert">
+        Questionnaire visant à recueillir les besoins de la mobilité des habitants du territoire Portes de Meuse
+      </div>
+      <div class="card mb-2" id="context">
+        <div class="card-body">
+          <h5 class="card-title">Contexte</h5>
+          <p class="card-text">Une réflexion sur la mobilité est menée sur la Communauté de Communes des Portes de Meuse, dans le cadre du Contrat Local de Santé, visant à améliorer la qualité de vie des habitants. Ce questionnaire vous est adressé
+            afin de recueillir vos besoins et contribuer à la réflexion afin d’apporter des réponses adaptées</p>
+          <a href="#form" class="btn btn-primary">Commencer</a>
+        </div>
+      </div>
+      <div class="card mb-2" id="form">
+        <form action="./submit" method="post">
+          <div class="card-header text-center">
+            Formulaire de réponse
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Dans quelle commune habitez-vous?</h5>
+            <div class="form-group">
+              <label for="citySelect">Ma commune</label>
+              <select name="city" id="citySelect" class="form-control" required>
+                <option value="" class="text-muted" selected>Selectionnez votre commune</option>
+                <option value="abainville">Abainville</option>
+                <option value="amanty">Amanty</option>
+                <option value="ancerville">Ancerville</option>
+                <option value="aulnois_en_perthois">Aulnois en perthois</option>
+                <option value="bazincourt_sur_saulx">Bazincourt sur saulx</option>
+                <option value="haironville">Haironville</option>
+              </select>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Dans quelle tranche d'âge vous trouvez-vous?</h5>
+            <div class="form-group">
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="ageRadio" id="ageRadio1" value="1" required>
+                <label for="ageRadio1" class="form-check-label">Moins de 25 ans</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="ageRadio" id="ageRadio2" value="2" required>
+                <label for="ageRadio2" class="form-check-label">Entre 25 et 40 ans</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="ageRadio" id="ageRadio3" value="3" required>
+                <label for="ageRadio3" class="form-check-label">Entre 40 et 60 ans</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="ageRadio" id="ageRadio4" value="4" required>
+                <label for="ageRadio4" class="form-check-label">Plus de 60 ans</label>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Vos besoins en termes de mobilité</h5>
+            <div class="list-group list-group-flush">
+              <div class="list-group-item">
+                <h6 class="card-subtitle mb-2 text-muted mt-2">L'accès aux sevices de santé et aux soins</h6>
+                <div class="form-group">
+                  <label for="healthSectors">Vers quels secteurs vous rendez-vous pour accéder aux services de santé et de soins?</label>
+                  <input type="text" class="form-control" name="healthSectors" id="healthSectors" required>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" name="hasHealthSectorsProblems" id="hasHealthSectorsProblems">
+                  <label class="form-check-label" for="hasHealthSectorsProblems">Avez-vous des difficultés pour vous y rendre?</label>
+                </div>
+                <div class="form-group">
+                  <label for="healthSectorsProblems">Si oui, lequelles et vers quels secteurs?</label>
+                  <textarea class="form-control" id="healthSectorsProblems" name="healthSectorsProblems" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="list-group-item">
+                <h6 class="card-subtitle mb-2 text-muted mt-2">L'accès aux services publics</h6>
+                <div class="form-group">
+                  <label for="publicSectors">Vers quels secteurs vous rendez-vous pour accéder aux services publics?</label>
+                  <input type="text" class="form-control" name="publicSectors" id="publicSectors" required>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" name="hasPublicSectorsProblems" id="hasPublicSectorsProblems">
+                  <label class="form-check-label" for="hasPublicSectorsProblems">Avez-vous des difficultés pour vous y rendre?</label>
+                </div>
+                <div class="form-group">
+                  <label for="publicSectorsProblems">Si oui, lequelles et vers quels services?</label>
+                  <textarea class="form-control" id="publicSectorsProblems" name="publicSectorsProblems" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="list-group-item">
+                <h6 class="card-subtitle mb-2 text-muted mt-2">L'accès aux commerces</h6>
+                <div class="form-group">
+                  <label for="shopsSectors">Vers quels secteurs vous rendez-vous pour accéder aux commerces?</label>
+                  <input type="text" class="form-control" name="shopsSectors" id="shopsSectors" required>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" name="hasShopsSectorsProblems" id="hasShopsSectorsProblems">
+                  <label class="form-check-label" for="hasShopsSectorsProblems">Avez-vous des difficultés pour vous y rendre?</label>
+                </div>
+                <div class="form-group">
+                  <label for="shopsSectorsProblems">Si oui, lequelles et vers quelles localitées?</label>
+                  <textarea class="form-control" id="shopsSectorsProblems" name="shopsSectorsProblems" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="list-group-item">
+                <h6 class="card-subtitle mb-2 text-muted mt-2">L'accès aux loisirs, aux activités sportives et culturelles</h6>
+                <div class="form-group">
+                  <label for="hobbiesSectors">Vers quels secteurs vous rendez-vous pour accéder aux loisirs, aux activités sportives et culturelles?</label>
+                  <input type="text" class="form-control" name="hobbiesSectors" id="hobbiesSectors" required>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" name="hasHobbiesSectorsProblems" id="hasHobbiesSectorsProblems">
+                  <label class="form-check-label" for="hasHobbiesSectorsProblems">Avez-vous des difficultés pour vous y rendre?</label>
+                </div>
+                <div class="form-group">
+                  <label for=hobbiessSectorsProblems">Si oui, lequelles et vers quelles localitées?</label>
+                  <textarea class="form-control" id="hobbiesSectorsProblems" name="hobbiesSectorsProblems" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Mise en place d'un transport sur le territoire</h5>
+            <label for="publicTransportUseful">Selon vous, la création d'un service de transport régulier sur votre territoire serait-il utile?</label>
+            <div class="form-group" id="publicTransportUseful">
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="publicTransportUseful" id="publicTransportUseful0" value="0" required>
+                <label for="publicTransportUseful0" class="form-check-label">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="publicTransportUseful" id="publicTransportUseful1" value="1" required>
+                <label for="publicTransportUseful1" class="form-check-label">Non</label>
+              </div>
+            </div>
+            <label for="publicTransportRate">Si oui, à quelle fréquence?</label>
+            <div class="form-group" id="publicTransportRate">
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate1" value="1">
+                <label for="publicTransportRate1" class="form-check-label">Hebdomadaire</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate2" value="2">
+                <label for="publicTransportRate2" class="form-check-label">Quinzaine</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate3" value="3">
+                <label for="publicTransportRate3" class="form-check-label">Mensuelle</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate4" value="4">
+                <label for="publicTransportRate4" class="form-check-label">Trimestrielle</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="otherTransports">Quels autres moyens de transport seraient utiles?</label>
+              <input type="text" class="form-control" id="otherTransports">
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </div>
+        </form>
+      </div>
+      <p class="text-right">Merci pour votre participation!</p>
+    </div>
+  </body>
+</html>
