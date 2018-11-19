@@ -17,7 +17,7 @@
         <div class="card-body">
           <h5 class="card-title">Contexte</h5>
           <p class="card-text">Une réflexion sur la mobilité est menée sur la Communauté de Communes des Portes de Meuse, dans le cadre du Contrat Local de Santé, visant à améliorer la qualité de vie des habitants. Ce questionnaire vous est adressé
-            afin de recueillir vos besoins et contribuer à la réflexion afin d’apporter des réponses adaptées</p>
+            afin de recueillir vos besoins et contribuer à la réflexion afin d’apporter des réponses adaptées.</p>
           <a href="#form" class="btn btn-primary">Commencer</a>
         </div>
       </div>
@@ -175,36 +175,36 @@
             <label for="publicTransportUseful">Selon vous, la création d'un service de transport régulier sur votre territoire serait-il utile?</label>
             <div class="form-group" id="publicTransportUseful">
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="publicTransportUseful" id="publicTransportUseful0" value="0" required>
+                <input type="radio" class="form-check-input" name="publicTransportUseful" id="publicTransportUseful0" value="0" required onchange="publicTransportEnable(true)">
                 <label for="publicTransportUseful0" class="form-check-label">Oui</label>
               </div>
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="publicTransportUseful" id="publicTransportUseful1" value="1" required>
+                <input type="radio" class="form-check-input" name="publicTransportUseful" id="publicTransportUseful1" value="1" required onchange="publicTransportEnable(false)">
                 <label for="publicTransportUseful1" class="form-check-label">Non</label>
               </div>
             </div>
             <label for="publicTransportRate">Si oui, à quelle fréquence?</label>
             <div class="form-group" id="publicTransportRate">
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate1" value="1">
+                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate1" value="1" required disabled>
                 <label for="publicTransportRate1" class="form-check-label">Hebdomadaire</label>
               </div>
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate2" value="2">
+                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate2" value="2" required disabled>
                 <label for="publicTransportRate2" class="form-check-label">Quinzaine</label>
               </div>
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate3" value="3">
+                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate3" value="3" required disabled>
                 <label for="publicTransportRate3" class="form-check-label">Mensuelle</label>
               </div>
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate4" value="4">
+                <input type="radio" class="form-check-input" name="publicTransportRate" id="publicTransportRate4" value="4" required disabled>
                 <label for="publicTransportRate4" class="form-check-label">Trimestrielle</label>
               </div>
             </div>
             <div class="form-group">
               <label for="otherTransports">Quels autres moyens de transport seraient utiles?</label>
-              <input type="text" class="form-control" id="otherTransports">
+              <input type="text" class="form-control" id="otherTransports" requried disabled>
             </div>
           </div>
           <div class="card-footer">
@@ -215,6 +215,8 @@
       <p class="text-right">Merci pour votre participation!</p>
     </div>
     <script type="text/javascript">
+      const publicTransportEnable = (val) => document.querySelectorAll('[name="publicTransportRate"], #otherTransports').forEach(item => item.disabled = !val)
+
       const onLoad = () => {
         console.log('windowLoad')
       }
