@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="card mb-2" id="form">
-        <form action="/submit" method="post">
+        <form action="submit.php" method="post">
           <div class="card-header text-center">
             Formulaire de réponse
           </div>
@@ -175,11 +175,11 @@
             <label for="publicTransportUseful">Selon vous, la création d'un service de transport régulier sur votre territoire serait-il utile ?</label>
             <div class="form-group" id="publicTransportUseful">
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="publicTransportUseful" id="publicTransportUseful0" value="0" required onchange="publicTransportEnable(true)">
+                <input type="radio" class="form-check-input" name="publicTransportUseful" id="publicTransportUseful0" value="1" required onchange="publicTransportEnable(true)">
                 <label for="publicTransportUseful0" class="form-check-label">Oui</label>
               </div>
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="publicTransportUseful" id="publicTransportUseful1" value="1" required onchange="publicTransportEnable(false)">
+                <input type="radio" class="form-check-input" name="publicTransportUseful" id="publicTransportUseful1" value="0" required onchange="publicTransportEnable(false)" checked>
                 <label for="publicTransportUseful1" class="form-check-label">Non</label>
               </div>
             </div>
@@ -204,7 +204,7 @@
             </div>
             <div class="form-group">
               <label for="otherTransports">Quels autres moyens de transport seraient utiles ?</label>
-              <input type="text" class="form-control" id="otherTransports" requried disabled>
+              <input type="text" class="form-control" name="otherTransports" id="otherTransports" requried disabled>
             </div>
           </div>
           <div class="card-footer">
