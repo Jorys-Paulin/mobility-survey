@@ -33,12 +33,12 @@ $separator = ';';
         $str .= ($_POST['publicTransportUseful'] ?? '').$separator;
         $str .= ($_POST['publicTransportRate'] ?? '').$separator;
         $str .= ($_POST['otherTransports'] ?? '');
-        var_dump($str);
-        $str_ = str_replace(PHP_EOL, "", $str);
+        //$str_ = str_replace(PHP_EOL, "", $str);
+        $str_ = htmlentities(str_replace(PHP_EOL, "", $str));
         $str_ .= "\n";
-        var_dump($str_);
         $contents = file_get_contents($dataFolder.'database.csv');
         $contents .= $str_;
+        var_dump($contents);
         if(file_put_contents($dataFolder.'database.csv', $contents)) { ?>
           <div class="alert alert-success" role="alert">
             Merci d'avoir participé à ce questionnaire! Vous pouvez à présent fermer cette fenêtre.
