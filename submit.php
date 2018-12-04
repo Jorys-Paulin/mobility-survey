@@ -33,9 +33,10 @@ $separator = ';';
         $str .= ($_POST['publicTransportUseful'] ?? '').$separator;
         $str .= ($_POST['publicTransportRate'] ?? '').$separator;
         $str .= ($_POST['otherTransports'] ?? '');
-        $str .= "\n";
+        $str_ = str_replace("\n", '[Entrée]', $str);
+        $str_ .= "\n";
         $contents = file_get_contents($dataFolder.'database.csv');
-        $contents .= $str;
+        $contents .= $str_;
         if(file_put_contents($dataFolder.'database.csv', $contents)) { ?>
           <div class="alert alert-success" role="alert">
             Merci d'avoir participé à ce questionnaire! Vous pouvez à présent fermer cette fenêtre.
