@@ -33,10 +33,10 @@ $separator = ';';
         $str .= ($_POST['publicTransportUseful'] ?? '').$separator;
         $str .= ($_POST['publicTransportRate'] ?? '').$separator;
         $str .= ($_POST['otherTransports'] ?? '');
-        print_r($str);
+        var_dump($str);
         $str_ = str_replace(PHP_EOL, "", $str);
         $str_ .= "\n";
-        print_r($str_);
+        var_dump($str_);
         $contents = file_get_contents($dataFolder.'database.csv');
         $contents .= $str_;
         if(file_put_contents($dataFolder.'database.csv', $contents)) { ?>
