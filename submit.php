@@ -38,7 +38,7 @@ $separator = ';';
         $str_ .= "\n";
         $contents = file_get_contents($dataFolder.'database.csv');
         $contents .= $str_;
-        var_dump($contents);
+        var_dump("contents", $contents);
         if(file_put_contents($dataFolder.'database.csv', $contents)) { ?>
           <div class="alert alert-success" role="alert">
             Merci d'avoir participé à ce questionnaire! Vous pouvez à présent fermer cette fenêtre.
