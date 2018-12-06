@@ -1,6 +1,23 @@
 <?php
 $dataFolder = __DIR__.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR;
 $separator = ';';
+$data = array();
+
+foreach ($_POST as $key => $value) {
+  if(empty($value)) {
+    $value = 'null';
+  }
+  $data[$key] = $value;
+}
+
+$json = json_encode($data);
+//var_dump($json);
+
+function saveToJSON($value, $filename) {
+  $contents = file_get_contents($filename);
+  $data = json_encode($value);
+  file_put_contents($filename, $data);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -34,7 +51,7 @@ $separator = ';';
         $str .= ($_POST['publicTransportRate'] ?? '').$separator;
         $str .= ($_POST['otherTransports'] ?? '');
         //$str_ = str_replace(PHP_EOL, "", $str);
-        $str_ = htmlentities(str_replace([PHP_EOL, "\r\n", "\n"], "", $str));
+        $str_ = htmlentities(str_replace([PHP_EOL, "\r\n", "\n", "\r"], "", $str));
         $str_ .= "\n";
         $contents = file_get_contents($dataFolder.'database.csv');
         $contents .= $str_;
